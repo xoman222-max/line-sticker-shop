@@ -1,0 +1,21 @@
+{
+  "name": "Office Capybara",
+  "intro": "A tie-wearing capybara who clocks in on time and regrets it on time.",
+  "copyright": "Capy Studio",
+  "creator": "Capy Studio",
+  "character": "character.png",
+  "style": "thick clean dark outlines, flat colors",
+  "frame_ms": 120,
+  "line_loops": 3,
+  "background": "transparent",
+  "stickers": [
+    {"word": "OK", "caption": "OK", "action": "nods twice and gives a big thumbs up"},
+    {"word": "No", "caption": "Nooo", "action": "bursts into huge cartoon tears, shaking"},
+    {"word": "Coffee", "caption": "Coffee", "action": "holds up a coffee mug and sips with eyes closed"},
+    {"word": "Busy", "caption": "Busy", "action": "types furiously on a tiny laptop"},
+    {"word": "Wait", "caption": "Wait", "action": "raises one paw asking to pause"},
+    {"word": "Done", "caption": "Done", "action": "leans back looking relieved"},
+    {"word": "Sorry", "caption": "Sorry", "action": "bows deeply with eyes closed"},
+    {"word": "Thanks", "caption": "Thanks", "action": "waves both paws happily"}
+  ]
+}

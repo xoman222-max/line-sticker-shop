@@ -1,0 +1,15 @@
+{
+  "name": "打工水豚",
+  "intro": "一只系着领带的水豚，每天准时上班，准时不想上班。",
+  "copyright": "水豚工作室",
+  "reward_line": "请水豚喝杯咖啡吧",
+  "character": "character.png",
+  "style": "thick clean dark outlines, flat colors",
+  "frame_ms": 120,
+  "background": "transparent",
+  "stickers": [
+    {"word": "收到", "caption": "收到", "action": "nods twice and gives a big thumbs up"},
+    {"word": "不想上班", "caption": "不想上班", "action": "bursts into huge cartoon tears, shaking, then calms a little"},
+    {"word": "摸鱼中", "caption": "摸鱼中", "action": "holds up a coffee mug and sips it with eyes closed, relaxed"}
+  ]
+}

@@ -7,6 +7,18 @@ Fork of [imraywang/ray-sticker-shop](https://github.com/imraywang/ray-sticker-sh
 - **LINE Creators Market** 静态 PNG 或动态 APNG 上传包（本 fork 主要用途，加 `--platform line`）
 - **微信**表情开放平台投稿素材（上游原版流程，未指定平台时的默认值，保持不变）
 
+## 一站式：圖集 → GIF → LINE（LINE Sticker Studio）
+
+整合了 [pixel-gif-sticker-pack](https://github.com/WoYun520/pixel-gif-sticker-pack)（MIT，見 `vendor/pixel_gif/LICENSE`）的合成器與檢查工具。流程見 [SKILL.md](SKILL.md)。
+
+```bash
+python3 scripts/atlas_check.py atlas.png --grid 4 4                     # 頭頂留白／間隔溝檢查
+python3 vendor/pixel_gif/scripts/export_pack.py manifest.json out --font NotoSansCJK-Bold.ttc --preview
+python3 scripts/gif_to_line.py line_proj out --name "貼圖名稱" --creator "作者" --animated
+```
+
+GIF 預覽約 2 秒、無限循環；LINE 動態為 1–4 次循環、合計 ≤4 秒，轉換時自動處理。
+
 ## LINE 快速上手（离线，不需 API key）
 
 ```bash
@@ -81,6 +93,7 @@ LINE 规格与上架步骤见 [references/line.md](references/line.md)。微信�
 
 ```bash
 python3 tests/test_line_build.py
+python3 tests/test_unified.py   # 圖集→GIF→LINE 端到端（需 CJK 或 DejaVu 字型，否則略過該段）
 ```
 
 ## 注意

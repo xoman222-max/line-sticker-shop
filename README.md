@@ -4,8 +4,27 @@ Fork of [imraywang/ray-sticker-shop](https://github.com/imraywang/ray-sticker-sh
 
 一张照片或角色图，生成一整套形象一致的表情包，并打包成：
 
-- **微信**表情开放平台投稿素材（原版流程，默认）
-- **LINE Creators Market** 静态 PNG 或动态 APNG 投稿包（本 fork 新增）
+- **LINE Creators Market** 静态 PNG 或动态 APNG 上传包（本 fork 主要用途，加 `--platform line`）
+- **微信**表情开放平台投稿素材（上游原版流程，未指定平台时的默认值，保持不变）
+
+## LINE 快速上手（离线，不需 API key）
+
+```bash
+pip install pillow
+# 项目目录放 pack.json（参考 references/pack.line.example.json），再放图，三选一：
+#   sheets/01.png …        4×4 精灵图（Grok 或任何工具出图都可）
+#   frames_raw/01/*.png …  已有逐帧 PNG（动态）
+#   stickers_raw/01.png …  单张透明 PNG（静态）
+# 可选 assets_raw/cover.png（主图）、assets_raw/icon.png（聊天标签）
+
+python3 scripts/sticker.py build 我的貼圖 --platform line              # 静态 PNG
+python3 scripts/sticker.py check 我的貼圖 --platform line
+python3 scripts/sticker.py build 我的貼圖 --platform line --animated   # 动态 APNG
+python3 scripts/sticker.py check 我的貼圖 --platform line --animated
+```
+
+上传包 `line_submit.zip` / `line_animated_submit.zip` 是扁平结构：`01.png … NN.png`、`main.png`、`tab.png`，
+可直接在 Creators Market「ZIP 上传」。`check` 的 FAIL = 官方可量测硬规格；WARN = 需人工判断。本地检查通过不代表审核通过。
 
 ## 安装
 
@@ -20,7 +39,7 @@ pip install pillow   # Python 3.9+
 ## 需要什么
 
 - Python 3.9+ 和 Pillow：`pip install pillow`
-- `OPENAI_API_KEY`（中转站再设 `OPENAI_BASE_URL`）——只在 `character` / `gen` 出图时需要
+- `OPENAI_API_KEY`（中转站再设 `OPENAI_BASE_URL`）——只在 `character` / `gen` 出图时需要；可选，不强制付费 API
 - 没有 key 也行：`prompts` 拿提示词，到 ChatGPT 出图放回 `sheets/`，再 `build`
 
 ## 用法摘要

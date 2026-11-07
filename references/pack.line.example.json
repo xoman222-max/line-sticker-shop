@@ -6,7 +6,7 @@
   "character": "character.png",
   "style": "thick clean dark outlines, flat colors",
   "frame_ms": 120,
-  "line_loops": 3,
+  "line_loops": 2,
   "background": "transparent",
   "stickers": [
     {"word": "OK", "caption": "OK", "action": "nods twice and gives a big thumbs up"},

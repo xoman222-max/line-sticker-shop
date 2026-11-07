@@ -546,7 +546,8 @@ def main():
     ):
         s = sp.add_parser(name, help=h)
         s.add_argument("pack")
-        s.add_argument("--target", choices=("wechat", "line"), default="wechat", help="投稿平台，默认 wechat")
+        s.add_argument("--target", "--platform", dest="target", choices=("wechat", "line"), default="wechat",
+                       help="投稿平台：line（LINE Creators Market）或 wechat（默认，沿用上游）")
         s.add_argument("--animated", action="store_true", help="LINE 动态贴图（APNG）；仅 --target line")
         s.set_defaults(fn=fn)
 
